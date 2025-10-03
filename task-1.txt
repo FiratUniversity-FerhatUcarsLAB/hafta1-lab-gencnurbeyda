@@ -1,4 +1,46 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541032
+AD-SOYAD:Nur Beyda GENÇ
+GÖREV 1:Optimum Bütçeli Market Alışverişi Algoritması
+// Amaç: Kullanıcının belirlediği bütçe ile ihtiyacına uygun alışveriş yapılmasını sağlamak.
 
-Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+BAŞLA
+
+// 1. Bütçeyi Al
+Ekrana yazdır: "Bütçenizi girin (TL):"
+Kullanıcıdan BUTCE değerini al
+
+// 2. Ürünleri Girmek için Hazırlık Yap
+SEPET = boş liste
+TOPLAM_MALIYET = 0
+
+// 3. Ürünleri Al
+TEKRARLA:
+    Ekrana yazdır: "Ürün adını girin (Çıkmak için 'bitir' yazın):"
+    Kullanıcıdan URUN_AD al
+
+    EĞER URUN_AD == "bitir" İSE
+        DÖNGÜDEN ÇIK
+
+    Ekrana yazdır: URUN_AD + " ürününün fiyatı (TL):"
+    Kullanıcıdan URUN_FIYAT al
+
+    URUN nesnesi oluştur (adı: URUN_AD, fiyat: URUN_FIYAT)
+    URUN'u SEPET listesine ekle
+    TOPLAM_MALIYET = TOPLAM_MALIYET + URUN_FIYAT
+SON
+
+// 4. Sepeti Göster
+Ekrana yazdır: "🛒 Alışveriş Sepetiniz:"
+HER URUN için SEPET'te:
+    Ekrana yazdır: "- " + URUN.ad + ": " + URUN.fiyat + " TL"
+Ekrana yazdır: "Toplam Harcama: " + TOPLAM_MALIYET + " TL"
+
+// 5. Bütçe Kontrolü
+EĞER TOPLAM_MALIYET > BUTCE İSE
+    FARK = TOPLAM_MALIYET - BUTCE
+    Ekrana yazdır: "⚠️ Bütçenizi " + FARK + " TL aştınız!"
+    Ekrana yazdır: "Dilerseniz bazı ürünleri çıkararak yeniden deneyebilirsiniz."
+DEĞİLSE
+    Ekrana yazdır: "🎉 Harika! Bütçenize uygun bir alışveriş yaptınız."
+
+BİTİR
