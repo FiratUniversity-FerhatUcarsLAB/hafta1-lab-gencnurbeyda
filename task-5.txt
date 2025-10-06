@@ -1,4 +1,38 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541032
+AD-SOYAD: Nur Beyda Genç
+// Dersler listesi, her dersin adı ve gerekli çalışma süresi (saat olarak)
+dersler = [
+    {isim: "Matematik", süre: 2},
+    {isim: "Fizik", süre: 1.5},
+    {isim: "Kimya", süre: 1},
+    {isim: "Türkçe", süre: 1.5}
+]
 
-Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+// Günlük toplam çalışma süresi
+toplamSure = 5
+
+FONKSİYON dersCalismaPlaniOlustur(dersler, toplamSure):
+
+    toplamGerekenSure = 0
+    HER ders İÇİN dersler:
+        toplamGerekenSure = toplamGerekenSure + ders.süre
+
+    EĞER toplamGerekenSure <= toplamSure:
+        YAZDIR "Tüm dersleri planladığın sürede çalışabilirsin."
+        DÖN dersler
+
+    DEĞİLSE:
+        YAZDIR "Çalışma süren yetersiz, süreyi derslere orantılı bölüştürelim."
+
+        // Orantılı çalışma süresi hesaplama
+        oran = toplamSure / toplamGerekenSure
+
+        yeniPlan = boş liste
+
+        HER ders İÇİN dersler:
+            yeniSure = ders.süre * oran
+            EKLE yeniPlan'a {isim: ders.isim, süre: yeniSure}
+
+        DÖN yeniPlan
+
+BİTİŞ
