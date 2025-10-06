@@ -1,4 +1,21 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541032
+AD-SOYAD:Nur Beyda Genç
+// Elimizde toplamPasta dilimi var
+// Ve toplamKisi sayısı var
 
-Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+FONKSİYON adilPastaPaylasimi(toplamPasta, toplamKisi):
+
+    // Her kişiye düşen dilim sayısı
+    dilimKisiBasi = toplamPasta / toplamKisi
+
+    // Kalan dilim varsa onu hesapla
+    kalanDilim = toplamPasta % toplamKisi
+
+    YAZDIR "Her kişi " + dilimKisiBasi + " dilim pasta alacak."
+
+    EĞER kalanDilim > 0 ise:
+        YAZDIR "Ve " + kalanDilim + " dilim pasta artacak."
+
+    DÖN dilimKisiBasi, kalanDilim
+
+BİTİŞ
