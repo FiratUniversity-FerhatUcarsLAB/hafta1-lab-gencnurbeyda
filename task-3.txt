@@ -1,4 +1,27 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541032
+AD-SOYAD:Nur Beyda Genç
 
-Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+// Her öğrenci bir isim ve not bilgisi taşır
+ogrenci = {
+    isim: "Ali",
+    not: 80
+}
+
+// Notları yüksekten düşüğe sıralayan fonksiyon
+FONKSİYON notlariSiralaYuksektenAsagiya(ogrenciler):
+
+    // Liste uzunluğunu al
+    n = ogrenciler uzunluğu
+
+    // Listenin tüm elemanları üzerinde işlem yap
+    TEKRAR n KERE:
+        HER i = 0'dan n-2'ye kadar:
+            
+            // Eğer şu anki öğrencinin notu, yanındakinden küçükse yer değiştir
+            EĞER ogrenciler[i].not < ogrenciler[i+1].not:
+                TAKAS yap ogrenciler[i] ile ogrenciler[i+1]
+
+    // Sıralanmış listeyi geri döndür
+    DÖN ogrenciler
+
+BİTİŞ
