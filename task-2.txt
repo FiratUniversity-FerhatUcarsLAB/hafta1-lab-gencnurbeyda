@@ -1,4 +1,48 @@
-Öğrenci No:
-AD-SOYAD:
+Öğrenci No:250541032
+AD-SOYAD:Nur Beyda Genç
 
-Lütfen seçtiğiniz algoritmaya ait çözümü ve diğer isterleri aşağıya ekleyiniz:
+FONKSİYON enIyiHamleyiSec(oyuncu, mevcutKare, rakipler, oyunTahtasi):
+
+    EĞER mevcutKare bir mülkse VE boşsa:
+
+        EĞER oyuncunun parası mülk fiyatından azsa:
+            DÖN "Alma - Paran yetmiyor"
+
+        EĞER oyuncunun aynı renkten başka mülkleri varsa:
+            DÖN "Kesin al - Renk grubunu tamamlama şansı var"
+
+        EĞER rakipler bu kareye sık sık gelebilecek pozisyondaysa:
+            DÖN "Al - Rakiplerden kira alma ihtimali yüksek"
+
+        EĞER oyuncunun parası mülkü alsa bile 100’den fazla kalıyorsa:
+            DÖN "Al - Güvenli seviyede paran kalıyor"
+
+        DEĞİLSE:
+            DÖN "Alma - Paranı riske atma"
+
+    EĞER mevcutKare başka bir oyuncunun mülküyse:
+
+        kira = mevcutKare.kiraBedeli
+
+        EĞER oyuncunun parası kira bedelinden azsa:
+            DÖN "Tehlike - İflas riski yüksek"
+
+        DEĞİLSE:
+            DÖN "Kira ödenecek - Pas geç"
+
+    EĞER oyuncu kendi mülkünde duruyorsa:
+
+        EĞER aynı renkten tüm mülkler oyuncudaysa VE ev yapılabiliyorsa:
+            DÖN "Yatırım Yap - Ev inşa et"
+
+        DEĞİLSE:
+            DÖN "Pas Geç - Şu an yapılacak bir şey yok"
+
+    EĞER mevcutKare özel bir kareyse (şans, ceza, hapishane vb):
+
+        DÖN "Kare etkisine göre hareket et"
+
+    Aksi halde:
+        DÖN "Pas Geç - Bu karede özel bir hamle gerekmez"
+
+BİTİŞ
